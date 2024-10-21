@@ -7,11 +7,8 @@ export @Component({
                <p>Dummy paragraph</p>
                <button>Submit</button>
                `,
-    styles: `h1{
-        color: red;
-        background: black;
-        }`,
-    templateUrl: './navbar.component.html'
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.css'
 })
 
 class AppNavbar {
