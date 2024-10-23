@@ -1,3 +1,22 @@
 <h1>{{title}}</h1>
-<app-navbar></app-navbar>
-<app-header></app-header>
+<p>{{ 1 + 1 }}</p>
+
+<img [src]="imgUrl" alt="">
+
+<button disabled="{{ isDisabled }}">disable button string interpolation</button>
+<button [disabled]="isDisabled">disable button using property data binding</button>
+
+<!-- class binding -->
+ <button 
+ [class.active]="isActive" 
+ [class.no-active]="!isActive"
+ [class.active-border]="isActive" 
+ [class.no-active-border]="!isActive"
+ 
+ > Click Me </button>
+
+ <!-- style binding -->
+  <button [class.apple] = " fruitName == 'Apple' ">Fruit ninja</button>
+
+<!-- <app-navbar></app-navbar>
+<app-header></app-header> -->

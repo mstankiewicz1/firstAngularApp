@@ -11,5 +11,9 @@ import { HeaderComponent } from './header/header.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'first-angular-app';
+  title: string =  'this loaded dynamically';
+  imgUrl: string = 'https://miro.medium.com/v2/resize:fit:783/1*Kj8Eq401fP2ecTY8r9B89Q.png'
+  isDisabled: boolean = true;
+  isActive: boolean = true;
+  fruitName: string = 'Apple';
 }
