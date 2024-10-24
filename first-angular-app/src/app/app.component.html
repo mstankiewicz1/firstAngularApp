@@ -18,5 +18,19 @@
  <!-- style binding -->
   <button [class.apple] = " fruitName == 'Apple' ">Fruit ninja</button>
 
+<!-- style binding -->
+   <button [style.backgroundColor]=" isActive ? 'red' : 'green'"
+   [style.border]="isActive ? '3px solid yellow' : '' "
+   ></button>
+
+   <button [class.active]="isActive">Class Binding</button>
+
+<!-- Event Binding -->
+<button (mouseover)="buttonClick()">Click me</button>
+
+<input type="text" (keyup)="keyEnter($event)">
+<input type="text" (keyup.a)="keyupFiltering()">
+
+
 <!-- <app-navbar></app-navbar>
 <app-header></app-header> -->
