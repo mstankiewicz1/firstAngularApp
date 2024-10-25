@@ -1,35 +1,37 @@
-<h1>{{title}}</h1>
+<!-- <h1>{{title}}</h1>
 <p>{{ 1 + 1 }}</p>
 
 <img [src]="imgUrl" alt="">
 
 <button disabled="{{ isDisabled }}">disable button string interpolation</button>
-<button [disabled]="isDisabled">disable button using property data binding</button>
+<button [disabled]="isDisabled">disable button using property data binding</button> -->
 
 <!-- class binding -->
- <button 
+ <!-- <button 
  [class.active]="isActive" 
  [class.no-active]="!isActive"
  [class.active-border]="isActive" 
  [class.no-active-border]="!isActive"
  
- > Click Me </button>
+ > Click Me </button> -->
 
  <!-- style binding -->
-  <button [class.apple] = " fruitName == 'Apple' ">Fruit ninja</button>
+  <!-- <button [class.apple] = " fruitName == 'Apple' ">Fruit ninja</button> -->
 
 <!-- style binding -->
-   <button [style.backgroundColor]=" isActive ? 'red' : 'green'"
+   <!-- <button [style.backgroundColor]=" isActive ? 'red' : 'green'"
    [style.border]="isActive ? '3px solid yellow' : '' "
    ></button>
 
-   <button [class.active]="isActive">Class Binding</button>
+   <button [class.active]="isActive">Class Binding</button> -->
 
 <!-- Event Binding -->
-<button (mouseover)="buttonClick()">Click me</button>
+<!-- <button (mouseover)="buttonClick()">Click me</button>
+<input type="text" (keyup)="keyEnter($event)"> -->
 
-<input type="text" (keyup)="keyEnter($event)">
-<input type="text" (keyup.a)="keyupFiltering()">
+<!-- <input type="text" (keyup.enter)="keyupFiltering(user)" #user id="userInput"> -->
+
+<input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)">
 
 
 <!-- <app-navbar></app-navbar>

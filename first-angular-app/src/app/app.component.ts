@@ -17,6 +17,8 @@ export class AppComponent {
   isActive: boolean = true;
   fruitName: string = 'Apple';
 
+  userName: string = 'John Doe';
+
   buttonClick() {
     console.log('button click')
   }
@@ -27,7 +29,11 @@ export class AppComponent {
       console.log("Enter key pressed");
     }
   }
-  keyupFiltering() {
-    console.log('keyup filtering');
+  keyupFiltering(user:HTMLInputElement) {
+    console.log(user.id);
+  }
+
+  updateUserName(username:HTMLInputElement) {
+    this.userName = username.value;
   }
 }
