@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppNavbar, HeaderComponent],
+  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,10 +19,15 @@ export class AppComponent {
   isActive: boolean = true;
   fruitName: string = 'Apple';
 
-  userName: string = 'John Doe';
+  // userName: string = 'John Doe';
+  textValue: string = 'Value is coming from component'
 
   buttonClick() {
     console.log('button click')
+  }
+
+  onKeyup() {
+    console.log(this.textValue);
   }
 
   keyEnter(event: any) {
@@ -35,5 +42,17 @@ export class AppComponent {
 
   updateUserName(username:HTMLInputElement) {
     this.userName = username.value;
+    console.log(this.userName);
   }
+
+  // directives
+
+  isLoggedIn: boolean = false;
+  userName: string = 'John Doe';
+
+  // multiple conditions
+  isAdmin: boolean = true;
+  isMember: boolean = true;
+  isGuest: boolean = true;
+
 }

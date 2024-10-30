@@ -31,8 +31,43 @@
 
 <!-- <input type="text" (keyup.enter)="keyupFiltering(user)" #user id="userInput"> -->
 
-<input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)">
+<!-- <input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)"> -->
+
+<!-- <input type="text" [(ngModel)]="userName"/>
+
+<h3>{{userName}}</h3> -->
+
+<!-- <input type="text" [value]="textValue" (keyup.enter)="onKeyup()"/> -->
+
+<!-- <input type="text" [(ngModel)]="textValue" (keyup.enter)="onKeyup()"/> -->
 
 
 <!-- <app-navbar></app-navbar>
 <app-header></app-header> -->
+
+<!-- directives -->
+<!-- <h2 *ngIf="isLoggedIn; else message">{{ userName }}</h2>
+
+<h4 *ngIf="!isLoggedIn">User is not logged in</h4>
+
+<ng-template #message>
+   <h4>User is not logged in (loaded useing ng-template)</h4>
+</ng-template>
+
+@if (isLoggedIn) {
+   <h3>{{ userName }}</h3>
+}
+
+@else {
+   <h4>User is not logged in (loaded using else syntax block)</h4>
+}
+
+@if (!isLoggedIn) {
+   <h4>User is not logged in (loaded using if syntax block)</h4>
+} -->
+
+<!-- Multiple conditions -->
+ <h4 *ngIf="isAdmin">Welcome Admin</h4>
+ <h4 *ngIf="isMember">Welcome Member</h4>
+ <h4 *ngIf="isGuest">Welcome Guest</h4>
+
