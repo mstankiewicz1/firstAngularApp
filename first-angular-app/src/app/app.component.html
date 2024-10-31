@@ -67,7 +67,80 @@
 } -->
 
 <!-- Multiple conditions -->
- <h4 *ngIf="isAdmin">Welcome Admin</h4>
+ <!-- <h4 *ngIf="isAdmin">Welcome Admin</h4>
  <h4 *ngIf="isMember">Welcome Member</h4>
- <h4 *ngIf="isGuest">Welcome Guest</h4>
+ <h4 *ngIf="isGuest">Welcome Guest</h4> -->
+<!-- ngIf else approach -->
+ <!-- <h4 *ngIf="isAdmin; else memberMessage">Welcome Admin</h4>
 
+ <ng-template #memberMessage>
+   <h4 *ngIf="isMember; else guestMessage">Welcome Member</h4>
+ </ng-template>
+ <ng-template #guestMessage>
+   <h4>Welcome Guest</h4>
+ </ng-template> -->
+
+
+ <!-- @if @else syntach approach -->
+  <!-- @if (isAdmin) {
+    <h4>Welcome Admin</h4>
+  }
+  @else if (isMember) {
+    <h4>Welcome Member</h4>
+  }
+  @else if (isGuest) {
+   <h4>Welcome Guest</h4>
+ } -->
+
+ <!-- if directive number values -->
+
+ <!-- <button (click)="countLoginAttempts()" *ngIf="loginCount < 4">Log In</button>
+
+ <h4 *ngIf="loginCount > 3">Exceed 3 login attempts try again later</h4>
+
+ @if (loginCount < 3) {
+ <button (click)="countLoginAttempts()">Login Syntax</button>
+ }
+
+ @if (loginCount > 3) {
+   <h4>Exceed 3 login attempts try again later</h4>
+ } -->
+
+  <!-- if directive with string values -->
+
+  <!-- <h4 *ngIf="userRole ==='Admin'; else memberMessage">Welcome Admin</h4>
+
+  <ng-template #memberMessage>
+   <h4>Welcome Member</h4>
+  </ng-template>
+
+  @if (userRole == 'Admin') {
+   <h4>Welcome Admin</h4>
+  }
+   @else if (userRole == 'Member') {
+      <h4>Welcome Member</h4>
+   }
+   -->
+
+   <!-- ng template -->
+
+   <h4 *ngIf="userRole ==='Admin'; else dynamicTemplate">Welcome Admin</h4>
+
+   <ng-template #dynamicTemplate>
+      <p>This content is inside ng-template</p>
+   </ng-template>
+
+   <ng-template #callToAction>
+      <p>Call to action</p>
+      <button>Join now</button>
+   </ng-template>
+
+   <div [ngTemplateOutlet]="callToAction">
+      <h5>Sidebar</h5>
+   </div>
+   <div [ngTemplateOutlet]="callToAction">
+      <h5>Hero</h5>
+   </div>
+   <div [ngTemplateOutlet]="callToAction">
+      <h5>Footer</h5>
+   </div>
