@@ -171,6 +171,20 @@
       }
    </ul> -->
 
-   <ul>
+   <!-- <ul>
       <li *ngFor="let user of usersObj">{{user.email}}</li>
+   </ul> -->
+
+   <!-- fetch array object -->
+   <ul>
+      <li *ngFor="let user of usersObj; let i = index">{{i}} {{user.name}} <button (click)="onDelete(i)">Delete</button></li>
    </ul>
+
+   <ul>
+      @for (user of usersObj; track user) {
+         <li>{{user.name}}</li>
+      }
+   </ul>
+
+   <!-- change detection -->
+    <button (click)="addNewUser()">Add new user</button>

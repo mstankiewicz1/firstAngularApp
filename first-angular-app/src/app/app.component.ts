@@ -72,4 +72,22 @@ export class AppComponent {
     { id: 3, name: 'Smith', email: 'smith@gmail.com' },
     { id: 4, name: 'Raj', email: 'raj@gmail.com' },
   ]
+
+  addNewUser() {
+    let user = {
+      id: 5,
+      name: 'User1',
+      email: 'user1@gmail.com'
+    }
+    this.usersObj.push(user);
+  }
+
+  // onDelete(user: object) {
+  //   let index = this.usersObj.indexOf(user);
+  //   this.usersObj.splice(index, 1);
+  // }
+
+  onDelete(index: number) {
+    this.usersObj.splice(index, 1);
+  }
 }
