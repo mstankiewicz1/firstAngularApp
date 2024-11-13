@@ -176,13 +176,23 @@
    </ul> -->
 
    <!-- fetch array object -->
+
+   <!-- <div *ngIf="usersObj.length === 0">
+      <p>No users to Display</p>
+   </div> -->
+
+
    <ul>
-      <li *ngFor="let user of usersObj; let i = index">{{i}} {{user.name}} <button (click)="onDelete(i)">Delete</button></li>
+      <li *ngFor="let user of usersObj; let i = index; let usersCount = count">
+         {{usersCount}} - {{i}} {{user.name}} 
+         <button (click)="onDelete(i)">Delete</button>
+         <p *ngIf="usersCount == 0">No users to Display</p>
+      </li>
    </ul>
 
    <ul>
-      @for (user of usersObj; track user) {
-         <li>{{user.name}}</li>
+      @for (user of usersObj; track user; let i = $index; let usersCount = $count) {
+         <li>{{usersCount}} {{i}} {{user.name}} <button (click)="onDelete(i)">Delete</button></li>
       }
    </ul>
 
