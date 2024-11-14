@@ -182,7 +182,7 @@
    </div> -->
 
 
-   <ul>
+   <!-- <ul>
       <li *ngFor="let user of usersObj; let i = index; let usersCount = count">
          {{usersCount}} - {{i}} {{user.name}} 
          <button (click)="onDelete(i)">Delete</button>
@@ -191,10 +191,31 @@
    </ul>
 
    <ul>
-      @for (user of usersObj; track user; let i = $index; let usersCount = $count) {
-         <li>{{usersCount}} {{i}} {{user.name}} <button (click)="onDelete(i)">Delete</button></li>
+
+      @if (usersObj.length == 0) {
+         <p>No users to Display - Loaded useing syntax</p>
+      }
+
+
+      @for (user of usersObj; track user; let i = $index; let usersCount = $count; let first = $first; let last = $last; let even = $even; let odd = $odd) {
+         <li>
+            {{odd}} - {{even}} - {{last}} - {{first}} - {{usersCount}} {{i}} {{user.name}} 
+            <button (click)="onDelete(i)">Delete</button>
+         </li>
+      }
+
+      @empty {
+         <p>No users to Display - Loaded useing empty syntax block</p>
       }
    </ul>
 
-   <!-- change detection -->
-    <button (click)="addNewUser()">Add new user</button>
+   change detection -->
+    <!-- <button (click)="addNewUser()">Add new user</button> -->
+
+    <div [ngSwitch]="usersRole">
+      <p *ngSwitchCase="'Admin'">Welcome Admin</p>
+      <p *ngSwitchCase="'Member'">Welcome Member</p>
+      <p *ngSwitchCase="'Editor'">Welcome Editor</p>
+
+      <p *ngSwitchDefault>Please Login</p>
+    </div>

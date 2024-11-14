@@ -3,12 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule, NgIf, NgTemplateOutlet, NgFor],
+  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule, NgIf, NgTemplateOutlet, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -64,7 +64,7 @@ export class AppComponent {
   //   console.log(this.loginCount)
   // }
 
-  users: Array<string> = ['John', 'Sam', 'Smith', 'Raj'];
+  // users: Array<string> = ['John', 'Sam', 'Smith', 'Raj'];
 
   // usersObj: Array<any> = [
   //   { id: 1, name: 'John', email: 'john@gmail.com' },
@@ -73,27 +73,30 @@ export class AppComponent {
   //   { id: 4, name: 'Raj', email: 'raj@gmail.com' },
   // ]
 
-  usersObj: Array<any> = [];
+  // usersObj: Array<any> = [];
 
-  constructor() {
-    console.log(this.usersObj.length);
-  }
+  // constructor() {
+  //   console.log(this.usersObj.length);
+  // }
 
-  addNewUser() {
-    let user = {
-      id: 5,
-      name: 'User1',
-      email: 'user1@gmail.com'
-    }
-    this.usersObj.push(user);
-  }
+  // addNewUser() {
+  //   let user = {
+  //     id: 5,
+  //     name: 'User1',
+  //     email: 'user1@gmail.com'
+  //   }
+  //   this.usersObj.push(user);
+  // }
 
   // onDelete(user: object) {
   //   let index = this.usersObj.indexOf(user);
   //   this.usersObj.splice(index, 1);
   // }
 
-  onDelete(index: number) {
-    this.usersObj.splice(index, 1);
-  }
+  // onDelete(index: number) {
+  //   this.usersObj.splice(index, 1);
+  // }
+
+  usersRole: string = ''
+
 }
