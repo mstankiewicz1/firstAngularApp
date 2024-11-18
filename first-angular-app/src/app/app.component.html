@@ -212,10 +212,42 @@
    change detection -->
     <!-- <button (click)="addNewUser()">Add new user</button> -->
 
-    <div [ngSwitch]="usersRole">
+    <!-- <div [ngSwitch]="usersRole">
       <p *ngSwitchCase="'Admin'">Welcome Admin</p>
       <p *ngSwitchCase="'Member'">Welcome Member</p>
       <p *ngSwitchCase="'Editor'">Welcome Editor</p>
-
       <p *ngSwitchDefault>Please Login</p>
-    </div>
+    </div> -->
+
+    <!-- @switch(usersRole) {
+      @case ('Admin') {
+         <p>Welcome Admin</p>
+      }
+      @case ('Member') {
+         <p>Welcome Member</p>
+      }
+      @default {
+         <p>Please Login</p>
+      }
+    } -->
+
+    <!-- <h1 [style.color]="isLoggedIn ? 'green' : 'red'" [style.textTransform]="isLoggedIn ? 'uppercase' : 'lowercase'">Welcome Admin</h1>
+
+    <h1 [ngStyle]="{
+       'color': isLoggedIn ? 'green' : 'red',
+       'textTransform': isLoggedIn ? 'uppercase' : 'lowercase'
+    }">Ng style directive</h1> -->
+
+
+<!-- ngClass -->
+ <!-- <h1 [class.login]="isLoggedIn" [class.logout]="!isLoggedIn">Class Binding</h1>
+
+ <h1 [ngClass]="{ 
+   'login': isLoggedIn,
+   'logout': !isLoggedIn,
+}">Ng class directive</h1> -->
+
+<!-- <app-header></app-header> -->
+<!-- <app-navbar></app-navbar> -->
+ <h1>{{appPostTitle}} (App)</h1>
+<app-posts-list [postListTitle]="appPostTitle" [postIsLogin]="appIsLogin"></app-posts-list>

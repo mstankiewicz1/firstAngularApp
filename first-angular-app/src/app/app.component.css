@@ -1,4 +1,4 @@
-.active {
+/* .active {
     background-color: green;
     border: 3px solid yellow;
 }
@@ -19,4 +19,14 @@
     background-color: red;
     border: 5px solid green;
 
+} */
+
+.login {
+    color: green;
+    text-transform: uppercase;
+}
+
+.logout {
+    color: red;
+    text-transform: lowercase;
 }
