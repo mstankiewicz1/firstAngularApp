@@ -249,5 +249,24 @@
 
 <!-- <app-header></app-header> -->
 <!-- <app-navbar></app-navbar> -->
- <h1>{{appPostTitle}} (App)</h1>
-<app-posts-list [postListTitle]="appPostTitle" [postIsLogin]="appIsLogin"></app-posts-list>
+ <!-- <h1>{{appPostTitle}} (App)</h1>
+<app-posts-list [postListTitle]="appPostTitle" [postIsLogin]="appIsLogin"></app-posts-list> -->
+
+<!-- <app-posts-list></app-posts-list> -->
+
+<!-- <p>{{ childMessage.childMessage }}</p> -->
+<!-- <app-posts-list (MessageEvent)="reciveMessage($event)"></app-posts-list> -->
+<!-- <p>{{ message }}</p>
+
+<p>{{ messageFromChild }}</p> -->
+
+
+<!-- <app-card>
+   <span header>username</span>
+   <h1 body>John Doe</h1>
+   <button footer>View Profile</button>
+</app-card> -->
+
+<app-posts-list></app-posts-list>
+
+<div *ngComponentOutlet="loadComponent()"></div>

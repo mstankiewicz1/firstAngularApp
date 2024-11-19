@@ -1,19 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import { NgClass, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet } from '@angular/common';
+import { NgClass, NgComponentOutlet, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet } from '@angular/common';
 import { PostsListComponent } from './posts-list/posts-list.component';
+import { CardComponent } from "./card/card.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule, NgIf, NgTemplateOutlet, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, NgStyle, NgClass, PostsListComponent ],
+  imports: [
+    RouterOutlet, 
+    AppNavbar, 
+    HeaderComponent, 
+    CardComponent, 
+    FormsModule, 
+    NgIf, 
+    NgTemplateOutlet, 
+    NgFor, 
+    NgSwitch, 
+    NgSwitchCase, 
+    NgSwitchDefault, 
+    NgStyle, 
+    NgClass, 
+    PostsListComponent, 
+    CardComponent,
+    NgComponentOutlet
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+// export class AppComponent implements AfterViewInit {
+  export class AppComponent {
   // title: string =  'this loaded dynamically';
   // imgUrl: string = 'https://miro.medium.com/v2/resize:fit:783/1*Kj8Eq401fP2ecTY8r9B89Q.png'
   // isDisabled: boolean = true;
@@ -99,10 +118,34 @@ export class AppComponent {
   // }
 
   // usersRole: string = ''
-  isLoggedIn: boolean = true
+  // isLoggedIn: boolean = true
 
-  appPostTitle: string = 'Post 1'
-  appIsLoggin: boolean = false;
+  // appPostTitle: string = 'Post 1'
+  // appIsLogin: boolean = false;
+
+  // @ViewChild(PostsListComponent) childMessage: any;
+  // message: string = '';
+  // messageFromChild: string = '';
+
+  // constructor() {
+  //   console.log(this.childMessage);
+  // }
+
+  // ngAfterViewInit() {
+  //   console.log(this.childMessage);
+  //   this.message = this.childMessage.childMessage;
+  // }
+
+  // reciveMessage(message: string) {
+  //   console.log(message);
+  //   this.messageFromChild = message;
+  // }
+
+  constructor() {}
+
+  loadComponent() {
+    return PostsListComponent;
+  }
   
 
 }
