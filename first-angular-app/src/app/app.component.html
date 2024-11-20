@@ -267,6 +267,12 @@
    <button footer>View Profile</button>
 </app-card> -->
 
-<app-posts-list></app-posts-list>
+<!-- <app-posts-list></app-posts-list> -->
 
-<div *ngComponentOutlet="loadComponent()"></div>
+<!-- <div *ngComponentOutlet="loadComponent()"></div> -->
+
+<!-- <button (click)="loadComponent()">Create Component</button>
+<button (click)="removeComponent()">Remove Component</button> -->
+
+<app-profile [pUserName]="userName"></app-profile>
+<button (click)="changeUser()">Change user name</button>

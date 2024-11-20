@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ViewContainerRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { NgClass, NgComponentOutlet, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet } from '@angular/common';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { CardComponent } from "./card/card.component";
+import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,8 @@ import { CardComponent } from "./card/card.component";
     NgClass, 
     PostsListComponent, 
     CardComponent,
-    NgComponentOutlet
+    NgComponentOutlet,
+    ProfileComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -141,10 +143,20 @@ import { CardComponent } from "./card/card.component";
   //   this.messageFromChild = message;
   // }
 
-  constructor() {}
+  userName: string = 'John Doe';
+
+  constructor( private viewContainer: ViewContainerRef) {}
 
   loadComponent() {
-    return PostsListComponent;
+    this.viewContainer.createComponent(PostsListComponent);
+  }
+
+  removeComponent() {
+    this.viewContainer.remove();
+  }
+
+  changeUser() {
+    this.userName = 'John Smith'
   }
   
 
