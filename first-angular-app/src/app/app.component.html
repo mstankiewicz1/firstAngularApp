@@ -274,5 +274,38 @@
 <!-- <button (click)="loadComponent()">Create Component</button>
 <button (click)="removeComponent()">Remove Component</button> -->
 
-<app-profile [pUserName]="userName"></app-profile>
-<button (click)="changeUser()">Change user name</button>
+<!-- <app-profile [pUserName]="userName"></app-profile> -->
+<!-- <button (click)="changeUser()">Change user name</button> -->
+
+
+<!-- <app-profile>
+   <h1>{{userName}}</h1>
+   <p>Content Projected from Parent</p>
+</app-profile>
+
+<button (click)="loadComponent()">Load Profile</button>
+
+<button (click)="removeComponent()">Remove Profile</button> -->
+
+<h1>{{ title }}</h1>
+<button (click)="uppercase()">uppercase</button>
+
+<h1>{{ title | uppercase }}</h1>
+
+<h1>{{ title | lowercase }}</h1>
+
+<h1>{{ title | titlecase }}</h1>
+
+
+<!-- Number Pipes -->
+ <h1>{{ 1234567.89 | number }}</h1>
+
+ <h1>1234567.89 | number</h1>
+
+ <!-- percentage pipe -->
+
+ <h1>{{ 0.7 | percent}}</h1>
+
+ <!-- Currency pipe -->
+
+ <h1>{{ 1000 | currency : 'GBP' : 'code' }}</h1>

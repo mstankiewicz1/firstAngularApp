@@ -1,9 +1,9 @@
-import { Component, ViewChild, AfterViewInit, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ViewContainerRef, Pipe } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import { NgClass, NgComponentOutlet, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet } from '@angular/common';
+import { CurrencyPipe, DecimalPipe, LowerCasePipe, NgClass, NgComponentOutlet, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet, PercentPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { CardComponent } from "./card/card.component";
 import { ProfileComponent } from './profile/profile.component';
@@ -28,7 +28,13 @@ import { ProfileComponent } from './profile/profile.component';
     PostsListComponent, 
     CardComponent,
     NgComponentOutlet,
-    ProfileComponent
+    ProfileComponent,
+    UpperCasePipe,
+    LowerCasePipe,
+    TitleCasePipe,
+    DecimalPipe,
+    PercentPipe,
+    CurrencyPipe
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -143,21 +149,29 @@ import { ProfileComponent } from './profile/profile.component';
   //   this.messageFromChild = message;
   // }
 
-  userName: string = 'John Doe';
+  // userName: string = 'John Doe';
 
-  constructor( private viewContainer: ViewContainerRef) {}
+  title: string = 'ANGULAR APP'
 
-  loadComponent() {
-    this.viewContainer.createComponent(PostsListComponent);
+  constructor() {}
+
+  uppercase() {
+    this.title = this.title.toUpperCase();
   }
 
-  removeComponent() {
-    this.viewContainer.remove();
-  }
 
-  changeUser() {
-    this.userName = 'John Smith'
-  }
+
+  // loadComponent() {
+  //   this.viewContainer.createComponent(ProfileComponent);
+  // }
+
+  // removeComponent() {
+  //   this.viewContainer.remove();
+  // }
+
+  // changeUser() {
+  //   this.userName = 'John Smith'
+  // }
   
 
 }
