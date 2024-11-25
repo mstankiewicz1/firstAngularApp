@@ -1,10 +1,12 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CardComponent } from "../card/card.component";
+import { JsonPipe } from '@angular/common';
+import { UserComponent } from "../user/user.component";
 
 @Component({
   selector: 'app-posts-list',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, JsonPipe, UserComponent],
   templateUrl: './posts-list.component.html',
   styleUrl: './posts-list.component.css'
 })
@@ -13,17 +15,18 @@ export class PostsListComponent {
 //  @Input() postListTitle: string = ''
 //  @Input() postIsLogin: boolean = false;
 
-childMessage: string = 'Hello From Child Component';
-postCount: number = 0;
+@Input() childUser:any;
 
-parentMessage: string = 'Message From the Child useing click Event';
+// childMessage: string = 'Hello From Child Component';
+// postCount: number = 0;
 
-@Output() MessageEvent = new EventEmitter();
+// parentMessage: string = 'Message From the Child useing click Event';
 
-sendMessage() {
-  console.log('button clicked');
-  this.MessageEvent.emit(this.parentMessage);
-}
+// @Output() MessageEvent = new EventEmitter();
 
+// sendMessage() {
+//   console.log('button clicked');
+//   this.MessageEvent.emit(this.parentMessage);
+// }
 
 }

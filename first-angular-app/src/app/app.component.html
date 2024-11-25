@@ -286,7 +286,7 @@
 <button (click)="loadComponent()">Load Profile</button>
 
 <button (click)="removeComponent()">Remove Profile</button> -->
-
+<!-- 
 <h1>{{ title }}</h1>
 <button (click)="uppercase()">uppercase</button>
 
@@ -294,18 +294,52 @@
 
 <h1>{{ title | lowercase }}</h1>
 
-<h1>{{ title | titlecase }}</h1>
+<h1>{{ title | titlecase }}</h1> -->
 
 
 <!-- Number Pipes -->
- <h1>{{ 1234567.89 | number }}</h1>
+ <!-- <h1>{{ 1234567.89 | number }}</h1>
 
- <h1>1234567.89 | number</h1>
+ <h1>1234567.89 | number</h1> -->
 
  <!-- percentage pipe -->
 
- <h1>{{ 0.7 | percent}}</h1>
+ <!-- <h1>{{ 0.7 | percent}}</h1> -->
 
  <!-- Currency pipe -->
 
- <h1>{{ 1000 | currency : 'GBP' : 'code' }}</h1>
+ <!-- <h1>{{ 1000 | currency : 'GBP' : 'code' }}</h1> -->
+
+ <!-- Date & time pipe -->
+
+
+ <!-- <h1>{{ today | date : 'short' }} - short</h1>
+ <h1>{{ today | date : 'medium' }} - Medium</h1>
+ <h1>{{ today | date : 'long' }} - Long</h1>
+ <h1>{{ today | date : 'full' }} - Full</h1> -->
+
+ <!-- <h1>{{ today | date : 'MMMM-dd-yyyy'}}</h1> -->
+
+ <!-- Current Time -->
+
+ <!-- <h1>{{ today | date : 'HH:mm:ss a z' }}</h1> -->
+
+ <!-- JSON pipe -->
+
+ <!-- <h1>{{ user | json }}</h1>
+ <button (click)="convertJson()">Convert JSON</button> -->
+
+ <!-- slice pipe -->
+  <!-- <h1>{{ 'Hello Angular World' | slice : 6 : 13 | uppercase | lowercase }}</h1> -->
+
+  <!-- chaining pipes -->
+
+  <!-- <app-posts-list [childUser]="users"></app-posts-list> -->
+
+  <app-posts-list></app-posts-list>
+  
+  <app-user></app-user>
+
+  <h1>{{ userService.users | json }}</h1>
+
+

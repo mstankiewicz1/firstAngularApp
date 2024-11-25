@@ -3,10 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import { CurrencyPipe, DecimalPipe, LowerCasePipe, NgClass, NgComponentOutlet, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet, PercentPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe, DecimalPipe, JsonPipe, LowerCasePipe, NgClass, NgComponentOutlet, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet, PercentPipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { CardComponent } from "./card/card.component";
 import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './user/user.component';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +36,11 @@ import { ProfileComponent } from './profile/profile.component';
     TitleCasePipe,
     DecimalPipe,
     PercentPipe,
-    CurrencyPipe
+    CurrencyPipe,
+    DatePipe,
+    JsonPipe,
+    SlicePipe,
+    UserComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -101,6 +107,13 @@ import { ProfileComponent } from './profile/profile.component';
   //   { id: 4, name: 'Raj', email: 'raj@gmail.com' },
   // ]
 
+  //   users: Array<any> = [
+  //   { id: 1, name: 'John', age: 20, email: 'john@gmail.com' },
+  //   { id: 2, name: 'Sam', age: 30, email: 'sam@gmail.com' },
+  //   { id: 3, name: 'Smith', age: 40, email: 'smith@gmail.com' },
+  //   { id: 4, name: 'Raj', age: 0, email: 'raj@gmail.com' },
+  // ]
+
   // usersObj: Array<any> = [];
 
   // constructor() {
@@ -151,13 +164,25 @@ import { ProfileComponent } from './profile/profile.component';
 
   // userName: string = 'John Doe';
 
-  title: string = 'ANGULAR APP'
+  // title: string = 'ANGULAR APP'
+  // today = new Date();
 
-  constructor() {}
+  // user: any = {
+  //   name: 'John Doe',
+  //   age: 30,
+  //   email: 'johndoe@gmail.com'
+  // }
 
-  uppercase() {
-    this.title = this.title.toUpperCase();
+  userService: any;
+
+  constructor() {
+    this.userService = new UserService();
+    console.log(this.userService);
   }
+
+  // uppercase() {
+  //   this.title = this.title.toUpperCase();
+  // }
 
 
 
@@ -171,6 +196,10 @@ import { ProfileComponent } from './profile/profile.component';
 
   // changeUser() {
   //   this.userName = 'John Smith'
+  // }
+
+  // convertJson() {
+  //   this.user = JSON.stringify(this.user);
   // }
   
 
