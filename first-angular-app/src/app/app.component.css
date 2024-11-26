@@ -21,7 +21,7 @@
 
 } */
 
-.login {
+/* .login {
     color: green;
     text-transform: uppercase;
 }
@@ -29,4 +29,13 @@
 .logout {
     color: red;
     text-transform: lowercase;
+} */
+
+.form-center {
+    margin: 0 auto;
+    width: 250px;
+}
+
+.alert {
+    color: red;
 }

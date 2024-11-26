@@ -175,9 +175,9 @@ import { UserService } from './services/user.service';
 
   userService: any;
 
-  constructor() {
-    this.userService = new UserService();
-    console.log(this.userService);
+  constructor(private userServiceDI: UserService) {
+    this.userService = userServiceDI;
+    // console.log(this.userService);
   }
 
   // uppercase() {
@@ -201,6 +201,17 @@ import { UserService } from './services/user.service';
   // convertJson() {
   //   this.user = JSON.stringify(this.user);
   // }
+
+  formSubmit( event: any ) {
+    console.log("Form Submit");
+    console.log(event.value);
+  }
+
+  getValue(fullName: any) {
+    console.log(fullName);
+    
+
+  }
   
 
 }
