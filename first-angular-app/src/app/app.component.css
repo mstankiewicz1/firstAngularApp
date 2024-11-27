@@ -39,3 +39,7 @@
 .alert {
     color: red;
 }
+
+input.ng-invalid {
+    border: 2px solid red;
+}

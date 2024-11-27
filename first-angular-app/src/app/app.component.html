@@ -346,10 +346,29 @@
 
    <form (submit)="formSubmit(f)" #f="ngForm">
       <h2>User Form</h2>
-      <input type="text" placeholder="Name" name="fullName" ngModel #fullName="ngModel" (change)="getValue(fullName)" required>
+      <input 
+         type="text" 
+         placeholder="Name" 
+         name="fullName" 
+         ngModel 
+         #fullName="ngModel" 
+         (change)="getValue(fullName)"
+         [class.ng-invalid]="fullName.invalid && fullName.touched"
+         required
+         minlength="3"
+         maxlength="10"
+      >
       <div class="alert">
          @if(fullName.invalid && fullName.touched) {
-            <p>Full name is required</p>
+            @if(fullName.hasError('required')) {
+               <p>Full name is required...</p>
+            }
+            @if(fullName.hasError('minlength')) {
+               <p>Name must be at least 3 characters...</p>
+            }
+            @if(fullName.hasError('maxlength')) {
+               <p>Name cannot be more than 10 characters long ...</p>
+            }
          }
       </div>
       <br><br>
