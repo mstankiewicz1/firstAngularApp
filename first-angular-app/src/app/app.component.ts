@@ -9,6 +9,7 @@ import { CardComponent } from "./card/card.component";
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './services/user.service';
+import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +41,8 @@ import { UserService } from './services/user.service';
     DatePipe,
     JsonPipe,
     SlicePipe,
-    UserComponent
+    UserComponent,
+    RxjsLearningComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
