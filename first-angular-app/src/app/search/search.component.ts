@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { debounceTime, first, from, Observable, of, take, takeLast, takeWhile } from 'rxjs';
+import { debounceTime, elementAt, filter, first, from, last, Observable, of, take, takeLast, takeWhile } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -25,19 +25,26 @@ export class SearchComponent implements OnInit {
     });
     this.searchForm.get('name').valueChanges
     .pipe(
+      filter((v) => this.checkCharCount(v))
       // takeLast(2),
       // take(2),
       // takeWhile((v) => this.checkCondition(v)),
-      debounceTime(3000)
+      // debounceTime(3000)
     ).subscribe(data => {
       console.log(data);
-      this.category$.pipe(
+      // this.category$.pipe(
         // takeLast(2)
-        first()
-      ).subscribe(data => {
-        console.log(data);
-      })
+        // first()
+        // last()
+      //   elementAt(1)
+      // ).subscribe(data => {
+      //   console.log(data);
+      // })
     })
+  }
+
+  checkCharCount(v) {
+    return v.length < 10 ? true : false;
   }
 
   checkCondition(value) {
