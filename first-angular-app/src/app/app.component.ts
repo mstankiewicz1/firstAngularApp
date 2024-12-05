@@ -10,25 +10,26 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './services/user.service';
 import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
+import { SearchComponent } from "./search/search.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
-    AppNavbar, 
-    HeaderComponent, 
-    CardComponent, 
-    FormsModule, 
-    NgIf, 
-    NgTemplateOutlet, 
-    NgFor, 
-    NgSwitch, 
-    NgSwitchCase, 
-    NgSwitchDefault, 
-    NgStyle, 
-    NgClass, 
-    PostsListComponent, 
+    RouterOutlet,
+    AppNavbar,
+    HeaderComponent,
+    CardComponent,
+    FormsModule,
+    NgIf,
+    NgTemplateOutlet,
+    NgFor,
+    NgSwitch,
+    NgSwitchCase,
+    NgSwitchDefault,
+    NgStyle,
+    NgClass,
+    PostsListComponent,
     CardComponent,
     NgComponentOutlet,
     ProfileComponent,
@@ -42,8 +43,9 @@ import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
     JsonPipe,
     SlicePipe,
     UserComponent,
-    RxjsLearningComponent
-  ],
+    RxjsLearningComponent,
+    SearchComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

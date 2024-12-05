@@ -5,6 +5,12 @@
 </div> -->
 
 
-<div *if="orderName">
+<!-- <div *if="orderName">
     {{ orderName }}
-</div>
+</div> -->
+
+<button #validate (click)="rxJsEventObservable()">
+    Click for Observable
+</button>
+
+<a href="http://localhost:4200/test-url" #getLink (mouseover)="getEventObservable()">Root Link</a>
